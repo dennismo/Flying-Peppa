@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		E65DCBA4212E1CEA003189D0 /* GameOverScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65DCBA3212E1CEA003189D0 /* GameOverScene.swift */; };
+		E66D96F4220C9A4000AF3C39 /* StartScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E66D96F3220C9A4000AF3C39 /* StartScreen.swift */; };
 		E69BE388212B65850015F96D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69BE387212B65850015F96D /* AppDelegate.swift */; };
 		E69BE38E212B65850015F96D /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69BE38D212B65850015F96D /* GameScene.swift */; };
 		E69BE390212B65850015F96D /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69BE38F212B65850015F96D /* GameViewController.swift */; };
@@ -19,6 +20,7 @@
 
 /* Begin PBXFileReference section */
 		E65DCBA3212E1CEA003189D0 /* GameOverScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverScene.swift; sourceTree = "<group>"; };
+		E66D96F3220C9A4000AF3C39 /* StartScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartScreen.swift; sourceTree = "<group>"; };
 		E69BE384212B65850015F96D /* Flying Peppa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Flying Peppa.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E69BE387212B65850015F96D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E69BE38D212B65850015F96D /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
@@ -64,6 +66,7 @@
 				E69BE38F212B65850015F96D /* GameViewController.swift */,
 				E69BE38D212B65850015F96D /* GameScene.swift */,
 				E6A86142212BC9E000E9D235 /* additionalClasses.swift */,
+				E66D96F3220C9A4000AF3C39 /* StartScreen.swift */,
 				E65DCBA3212E1CEA003189D0 /* GameOverScene.swift */,
 				E69BE391212B65850015F96D /* Main.storyboard */,
 				E69BE394212B65860015F96D /* Assets.xcassets */,
@@ -105,6 +108,7 @@
 				TargetAttributes = {
 					E69BE383212B65850015F96D = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 1000;
 					};
 				};
 			};
@@ -146,6 +150,7 @@
 			files = (
 				E65DCBA4212E1CEA003189D0 /* GameOverScene.swift in Sources */,
 				E69BE38E212B65850015F96D /* GameScene.swift in Sources */,
+				E66D96F4220C9A4000AF3C39 /* StartScreen.swift in Sources */,
 				E6A86143212BC9E000E9D235 /* additionalClasses.swift in Sources */,
 				E69BE390212B65850015F96D /* GameViewController.swift in Sources */,
 				E69BE388212B65850015F96D /* AppDelegate.swift in Sources */,
@@ -296,6 +301,7 @@
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = M2H62N6SQK;
 				INFOPLIST_FILE = "Flying Peppa/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -304,7 +310,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "2161e2de-108e-4976-9d52-ddd129e6d02c";
 				PROVISIONING_PROFILE_SPECIFIER = test_wildcard_distribution;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -317,6 +323,7 @@
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = M2H62N6SQK;
 				INFOPLIST_FILE = "Flying Peppa/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -325,7 +332,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "2161e2de-108e-4976-9d52-ddd129e6d02c";
 				PROVISIONING_PROFILE_SPECIFIER = test_wildcard_distribution;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

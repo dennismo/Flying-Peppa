@@ -41,14 +41,14 @@ class GameScene: SKScene {
         addChild(background)
         
         scoreLabel.fontColor = .black
-        scoreLabel.zPosition = 2
+        scoreLabel.zPosition = 4
         scoreLabel.fontSize = 50
         scoreLabel.text = "START"
         scoreLabel.position = CGPoint(x:view.bounds.size.width / 2, y: view.bounds.height * 3 / 4)
         addChild(scoreLabel)
         
         wandIntervalX = view.bounds.size.width * 0.8
-        wandIntervalY = view.bounds.size.height * 0.38 + 100
+        wandIntervalY = view.bounds.size.height * 0.38
         //wandIntervalY = view.bounds.size.height * 0.38
         randomWandY = view.bounds.size.height * 0.254
         print(view.bounds.size)
@@ -80,9 +80,7 @@ class GameScene: SKScene {
         peppa.physicsBody?.collisionBitMask = 0b110
         peppa.physicsBody?.angularDamping = 0.6
 //        peppa.physicsBody?.linearDamping = 0.05
-        peppa.physicsBody?.restitution = 0.8
-        
-        
+        peppa.physicsBody?.restitution = 0.7
         addChild(peppa)
         
         physicsWorld.gravity = CGVector(dx: 0, dy: -1 * view.bounds.size.height * 0.009)
@@ -94,7 +92,7 @@ class GameScene: SKScene {
         let randomPosition2 = random(min: -100, max: 170)
         
         for wand in wands{
-            wand.size = CGSize(width: view.bounds.size.width * 0.4 - 40, height: view.bounds.size.height * 0.59)
+            wand.size = CGSize(width: view.bounds.size.width * 0.4 + 40, height: view.bounds.size.height * 0.59)
             //wand.size = CGSize(width: view.bounds.size.width * 0.4, height: view.bounds.size.height * 0.59)
         }
         
@@ -176,13 +174,11 @@ class GameScene: SKScene {
                 peppa.physicsBody?.affectedByGravity = true
             }
         }
-
-        
     }
     
     func updateGameOver(){
         
-        if peppa.position.x > (view?.bounds.size.width)! {
+        if peppa.position.x > (view?.bounds.size.width)! + 10 {
             let gameOverScene = GameOverScene(size: self.size, score: score,win: true)
             self.view?.presentScene(gameOverScene)
             return
@@ -237,14 +233,12 @@ class GameScene: SKScene {
             //peppa.run(move)
         }
         peppa.fall = false
-        
-//        peppa.physicsBody?.velocity = CGVector(dx: 0, dy: 0)
+    
     }
     
     override func update(_ currentTime: TimeInterval) {
 
         fallingAction()
-        
         terminalVelocity(velocity: -400)
         wandRefresh()
         foregroundRefresh()

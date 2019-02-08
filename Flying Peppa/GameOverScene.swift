@@ -33,7 +33,7 @@ class GameOverScene: SKScene{
             SKAction.run { [weak self] in
                 
                 guard let `self` = self else { return }
-                let scene = GameScene(size: size)
+                let scene = StartScene(size: size)
                 let reveal = SKTransition.crossFade(withDuration: 0.5)
                 self.view?.presentScene(scene,transition: reveal)
             }
