@@ -43,7 +43,7 @@ class GameScene: SKScene {
         scoreLabel.fontColor = .black
         scoreLabel.zPosition = 4
         scoreLabel.fontSize = 50
-        scoreLabel.text = "START"
+        scoreLabel.text = "FLAP!"
         scoreLabel.position = CGPoint(x:view.bounds.size.width / 2, y: view.bounds.height * 3 / 4)
         addChild(scoreLabel)
         
@@ -92,7 +92,7 @@ class GameScene: SKScene {
         let randomPosition2 = random(min: -100, max: 170)
         
         for wand in wands{
-            wand.size = CGSize(width: view.bounds.size.width * 0.4 + 40, height: view.bounds.size.height * 0.59)
+            wand.size = CGSize(width: view.bounds.size.width * 0.4 + 10, height: view.bounds.size.height * 0.59)
             //wand.size = CGSize(width: view.bounds.size.width * 0.4, height: view.bounds.size.height * 0.59)
         }
         
