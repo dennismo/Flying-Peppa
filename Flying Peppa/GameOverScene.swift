@@ -10,11 +10,19 @@ import Foundation
 import SpriteKit
 
 class GameOverScene: SKScene{
+    func setHighscore(score:Int){
+        UserDefaults.standard.set(score, forKey: "HIGHSCORE")
+    }
     let dino = UIImageView(image: UIImage(named: "PeppaDino"))
     init(size: CGSize, score: Int, win: Bool){
         super.init(size:size)
-        self.backgroundColor = .black
         
+        self.backgroundColor = .black
+        var highscore = UserDefaults().integer(forKey: "HIGHSCORE")
+        if score > highscore {
+            highscore = score
+            setHighscore(score: score)
+        }
         let gameEndLabel = SKLabelNode(fontNamed: "AvenirNextCondensed-Heavy")
         gameEndLabel.fontSize = 30
         gameEndLabel.zPosition = 2
@@ -25,7 +33,7 @@ class GameOverScene: SKScene{
             gameEndLabel.text = "WIN!"
         }
         else{
-            gameEndLabel.text = "Score: \(score)"
+            gameEndLabel.text = "Score: \(score) \n Highscore: \(highscore)"
         }
         
         addChild(gameEndLabel)
