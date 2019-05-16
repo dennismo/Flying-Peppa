@@ -16,7 +16,6 @@ class GameOverScene: SKScene{
     let dino = UIImageView(image: UIImage(named: "PeppaDino"))
     init(size: CGSize, score: Int, win: Bool){
         super.init(size:size)
-        
         self.backgroundColor = .black
         var highscore = UserDefaults().integer(forKey: "HIGHSCORE")
         if score > highscore {

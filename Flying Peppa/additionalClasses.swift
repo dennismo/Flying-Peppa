@@ -40,7 +40,7 @@ let wandUp = SKTexture(imageNamed: "Wand2")
 let wandDown = SKTexture(imageNamed: "Wand1")
 let wandSize = CGSize(width: 150, height: 400)
 
-let backgroundTexture = SKTexture(imageNamed: "peppaBackground2")
+let backgroundTexture = SKTexture(imageNamed: "Background1")
 let foregroundTexture = SKTexture(imageNamed: "Foreground1")
 
 

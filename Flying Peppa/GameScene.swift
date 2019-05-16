@@ -72,15 +72,15 @@ class GameScene: SKScene {
         }
 
         
-        peppa.position = CGPoint(x: view.bounds.size.width / 2 - 50, y: view.bounds.size.height / 2 + 300)
+        peppa.position = CGPoint(x: view.bounds.size.width / 2 - 50, y: view.bounds.size.height / 2)
         peppa.size = CGSize(width: view.bounds.size.width * 0.266, height: view.bounds.size.width * 0.266)
         peppa.physicsBody = SKPhysicsBody(texture: peppaPigTexture1, size: peppa.size)
         peppa.physicsBody?.categoryBitMask = PhysicsCategory.Pig
         peppa.physicsBody?.contactTestBitMask = 0b110
         peppa.physicsBody?.collisionBitMask = 0b110
-        peppa.physicsBody?.angularDamping = 0.6
+        peppa.physicsBody?.angularDamping = 1
 //        peppa.physicsBody?.linearDamping = 0.05
-        peppa.physicsBody?.restitution = 0.7
+        peppa.physicsBody?.restitution = 0.6
         addChild(peppa)
         
         physicsWorld.gravity = CGVector(dx: 0, dy: -1 * view.bounds.size.height * 0.009)
@@ -116,6 +116,7 @@ class GameScene: SKScene {
             wand.physicsBody?.velocity = CGVector(dx: -150, dy: 0)
             wand.physicsBody?.linearDamping = 0
             wand.physicsBody?.friction = 0
+            wand.physicsBody?.restitution = 0.2;
             addChild(wand)
         }
         
@@ -163,7 +164,7 @@ class GameScene: SKScene {
             foreground2.position.x = (view?.bounds.size.height)! * 3 / 2
         }
     }
-    
+     
     
     func terminalVelocity(velocity : CGFloat){
         if let downV = peppa.physicsBody?.velocity.dy{
@@ -189,7 +190,7 @@ class GameScene: SKScene {
             self.view?.presentScene(gameOverScene)
             return
         }
-        if peppa.position.y > ((view?.bounds.height)! + 50){
+        if peppa.position.y > ((view?.bounds.height)! + 70){
             let gameOverScene = GameOverScene(size: self.size, score: score,win: false)
             self.view?.presentScene(gameOverScene)
             return
